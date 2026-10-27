@@ -1,0 +1,53 @@
+# secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+cookies*.txt
+*.cookies
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+
+# your projects, reports and generated output (may contain your content, recordings and transcripts)
+projects/
+output/
+_tmp/
+
+# media: never commit videos, recordings or renders
+*.mp4
+*.mov
+*.m4v
+*.webm
+*.mkv
+*.mp3
+*.wav
+*.flac
+*.ogg
+*.m4a
+*.aac
+*.raw
+
+# generated procedural sound effects (recreated on demand)
+assets/sfx/
+
+# private custom scenes (keep your own episodes out of the public repo)
+renderer/src/episodes/private/
+
+# Node / renderer / web
+node_modules/
+renderer/out/
+dist/
+.wrangler/
+playwright-report/
+test-results/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
