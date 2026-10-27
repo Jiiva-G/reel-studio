@@ -12,11 +12,13 @@ assets in this repository: dependencies are installed by `uv sync` and `npm ci` 
 | soxr (via librosa) | LGPL-2.1-or-later | Used unmodified as a library. |
 | mediabunny, `@mediabunny/*`, certifi | MPL-2.0 | File-level copyleft; used unmodified. |
 | caniuse-lite | CC-BY-4.0 | Build-time browser data. |
+| `@remotion/player` (web editor preview) | Remotion License | Same terms as Remotion above. |
 
 ## Fonts
 
-The renderer loads Space Grotesk, Inter, JetBrains Mono and Noto Sans Tamil from Google Fonts at render time via
-`@remotion/google-fonts`. All four are licensed under the SIL Open Font License 1.1.
+The renderer (and the web editor's live preview) loads Space Grotesk, Inter, JetBrains Mono and Noto Sans Tamil from
+Google Fonts via `@remotion/google-fonts`. The website itself self-hosts Schibsted Grotesk and Space Grotesk from the
+`@fontsource` packages. All of these fonts are licensed under the SIL Open Font License 1.1.
 
 ## Sound
 
@@ -425,4 +427,34 @@ Generated with `uv run python scripts/third_party.py` for this release.
 | ws | 8.21.0 | MIT |
 | yallist | 3.1.1 | ISC |
 | zod | 4.6.6 | MIT |
+| zustand | 5.0.16 | MIT |
+
+### Website and editor packages (npm, production dependencies)
+
+| Package | Version | Licence |
+|---|---|---|
+| @babel/runtime | 7.29.10 | MIT |
+| @fontsource/schibsted-grotesk | 5.3.0 | OFL-1.1 |
+| @fontsource/space-grotesk | 5.3.0 | OFL-1.1 |
+| @react-three/fiber | 9.8.2 | MIT |
+| @remotion/google-fonts | 4.0.538 | SEE LICENSE IN LICENSE.md |
+| @remotion/noise | 4.0.538 | MIT |
+| @remotion/player | 4.0.538 | SEE LICENSE IN LICENSE.md |
+| @types/react-reconciler | 0.28.9 | MIT |
+| @types/webxr | 0.5.24 | MIT |
+| base64-js | 1.5.1 | MIT |
+| buffer | 6.0.3 | MIT |
+| fflate | 0.8.3 | MIT |
+| ieee754 | 1.2.1 | BSD-3-Clause |
+| its-fine | 2.1.1 | MIT |
+| react | 19.2.0 | MIT |
+| react-dom | 19.2.0 | MIT |
+| scheduler | 0.27.0 | MIT |
+| react-use-measure | 2.1.7 | MIT |
+| remotion | 4.0.538 | SEE LICENSE IN LICENSE.md |
+| scheduler | 0.28.0 | MIT |
+| simplex-noise | 4.0.1 | MIT |
+| suspend-react | 0.1.3 | MIT |
+| three | 0.186.1 | MIT |
+| use-sync-external-store | 1.7.0 | MIT |
 | zustand | 5.0.16 | MIT |

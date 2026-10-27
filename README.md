@@ -6,8 +6,9 @@ storyboard → voice-over → sound design → [Remotion](https://www.remotion.d
 Reel Studio runs **on your machine**. It never needs a server, and it only calls an AI API when you
 approve it for a project, using **your own** keys.
 
-> **Status:** v0.1, early release. The browser editor at <https://studio.jeevag.in> is in development.
-> This repository contains the local engine and renderer.
+> **Status:** v0.1, early release. This repository holds the local engine, the renderer and the free browser
+> editor (`apps/web`, to be hosted at <https://studio.jeevag.in>). The editor writes and previews the storyboard;
+> the engine renders the video on your machine.
 
 ## What it does
 
@@ -58,7 +59,7 @@ uv run reel-studio new --content notes.md --approve-api       # drafts script.md
 uv run reel-studio run <project> --from voice --approve-api   # voice, sound, render, QA
 ```
 
-**Option B: from the browser editor (planned)** — export a `.reelstudio.zip`, then:
+**Option B: from the browser editor** — write and preview the reel in the browser, export a `.reelstudio.zip`, then:
 
 ```bash
 uv run reel-studio import my-reel.reelstudio.zip
@@ -121,6 +122,16 @@ uv run python -m unittest discover -s tests -v   # offline tests (no network, AP
 uv run ruff check .
 cd renderer && npm run typecheck
 uv run python scripts/smoke_render.py            # renders the demo and checks the MP4 (needs Node + FFmpeg)
+```
+
+The browser editor and website live in `apps/web` (Vite + React; the preview uses the renderer's own scenes in
+Remotion Player):
+
+```bash
+cd apps/web && npm ci
+npm run dev          # http://localhost:5173 — website at /, editor at /app/
+npm test             # unit tests (validation, timing and bundle format ported from the engine)
+npm run build && npm run e2e   # end-to-end and accessibility tests on the production build
 ```
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) and [docs/](docs/).

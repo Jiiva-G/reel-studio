@@ -13,7 +13,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MEDIA = {".mp4", ".mov", ".m4v", ".webm", ".mkv", ".mp3", ".wav", ".flac", ".ogg", ".m4a", ".aac", ".raw"}
 MAX_BYTES = 1_500_000
-ALLOW_LARGE = {"renderer/package-lock.json", "uv.lock"}
+ALLOW_LARGE = {"renderer/package-lock.json", "apps/web/package-lock.json", "uv.lock"}
+ALLOW_MEDIA = "apps/web/public/media/"  # silent demo loops rendered from examples/demo (no voice, no personal content)
 SECRET = re.compile(
     r"(gsk_[A-Za-z0-9]{20,}|AIza[0-9A-Za-z_\-]{30,}|sk-[A-Za-z0-9_\-]{20,}|sk_(live|test)_[A-Za-z0-9]{16,}"
     r"|ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|xox[abp]-[A-Za-z0-9-]{10,}"
@@ -40,7 +41,7 @@ def main() -> int:
         if not p.is_file():
             continue
         name = p.name.lower()
-        if p.suffix.lower() in MEDIA:
+        if p.suffix.lower() in MEDIA and not rel.startswith(ALLOW_MEDIA):
             problems.append(f"media file: {rel}")
         if name == ".env" or (name.startswith(".env.") and name != ".env.example"):
             problems.append(f"env file: {rel}")

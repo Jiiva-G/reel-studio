@@ -28,13 +28,14 @@ def main() -> None:
         d = dists[name]
         print(f"| {d.metadata['Name']} | {d.version} | {py_license(d)} |")
 
-    lock = json.loads((ROOT / "renderer" / "package-lock.json").read_text(encoding="utf-8"))
-    print("\n### Renderer packages (npm, production dependencies)\n\n| Package | Version | Licence |\n|---|---|---|")
-    for path, info in sorted(lock["packages"].items()):
-        if not path or info.get("dev") or "node_modules/" not in path:
-            continue
-        name = path.split("node_modules/")[-1]
-        print(f"| {name} | {info.get('version', '')} | {info.get('license', 'see package')} |")
+    for title, folder in (("Renderer", "renderer"), ("Website and editor", "apps/web")):
+        lock = json.loads((ROOT / folder / "package-lock.json").read_text(encoding="utf-8"))
+        print(f"\n### {title} packages (npm, production dependencies)\n\n| Package | Version | Licence |\n|---|---|---|")
+        for path, info in sorted(lock["packages"].items()):
+            if not path or info.get("dev") or "node_modules/" not in path:
+                continue
+            name = path.split("node_modules/")[-1]
+            print(f"| {name} | {info.get('version', '')} | {info.get('license', 'see package')} |")
 
 
 if __name__ == "__main__":
