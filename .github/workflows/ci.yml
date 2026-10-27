@@ -58,6 +58,37 @@ jobs:
       - run: npm audit --omit=dev --audit-level=high
         working-directory: renderer
 
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - run: npm ci
+      - run: npm audit --omit=dev --audit-level=high
+      - name: Unit tests (validation, timing and bundle format ported from the engine)
+        run: npm test
+        env:
+          BUNDLE_OUT: ${{ runner.temp }}/web-sample.reelstudio.zip
+      - name: The engine imports a bundle exported by the web editor
+        working-directory: .
+        run: |
+          uv sync --locked
+          REEL_STUDIO_PROJECTS="${{ runner.temp }}/projects" uv run reel-studio import "${{ runner.temp }}/web-sample.reelstudio.zip"
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - name: End-to-end and accessibility tests (desktop and phone)
+        run: npm run e2e
+
   smoke-render:
     needs: [engine, renderer]
     runs-on: ubuntu-latest
