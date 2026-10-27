@@ -1,0 +1,102 @@
+{
+  "title": "DEMO FIXTURE: Rate limiting in FastAPI",
+  "brief": {
+    "core_message": "Protect FastAPI endpoints from request floods with slowapi.",
+    "target_audience": "Python backend beginners",
+    "hook": "One client can take down your API.",
+    "key_points": ["Limiter keyed by client IP", "5/minute decorator", "429 on excess", "Redis + proxy IP in production"],
+    "supporting_examples": ["/hello endpoint limited to 5 requests per minute"],
+    "accuracy_requirements": ["Endpoint must accept request: Request", "In-memory storage is per process"],
+    "call_to_action": "Follow for more backend tips",
+    "suggested_duration_s": 40,
+    "language_and_tone": "English, friendly and direct"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "narration": "One client can flood your API with requests.",
+      "subtitle": "One client can flood your API with requests.",
+      "visual": "Kinetic headline, amber emphasis",
+      "on_screen": { "heading": "One client can *flood* your API", "tag": "FastAPI" },
+      "transition": "zoom", "sfx": ["impact"], "music_intensity": "medium"
+    },
+    {
+      "type": "diagram",
+      "narration": "A rate limiter sits between the client and your endpoint, and decides who gets through.",
+      "subtitle": "A rate limiter sits between the client and your endpoint, and decides who gets through.",
+      "visual": "Vertical flow client to limiter to API with a travelling packet",
+      "on_screen": {
+        "heading": "Add a *gatekeeper*",
+        "nodes": [
+          { "label": "Client", "icon": "user" },
+          { "label": "Rate limiter", "icon": "shield", "note": "5 requests / minute" },
+          { "label": "FastAPI", "icon": "server" }
+        ],
+        "edge_labels": ["request", "allowed"]
+      },
+      "transition": "slide", "sfx": ["whoosh"], "music_intensity": "medium"
+    },
+    {
+      "type": "code",
+      "narration": "Create a Limiter keyed by client IP, attach it to the app, and register the 429 handler.",
+      "subtitle": "Create a Limiter keyed by client IP, attach it to the app, and register the 429 handler.",
+      "visual": "Code window, lines reveal, limiter lines highlighted",
+      "on_screen": {
+        "filename": "main.py",
+        "language": "python",
+        "code": "from fastapi import FastAPI, Request\nfrom slowapi import (Limiter,\n    _rate_limit_exceeded_handler)\nfrom slowapi.util import get_remote_address\nfrom slowapi.errors import RateLimitExceeded\n\nlimiter = Limiter(\n    key_func=get_remote_address)\napp = FastAPI()\napp.state.limiter = limiter\napp.add_exception_handler(\n    RateLimitExceeded,\n    _rate_limit_exceeded_handler)",
+        "highlight_lines": [7, 8]
+      },
+      "transition": "fade", "sfx": ["whoosh", "typing"], "music_intensity": "low"
+    },
+    {
+      "type": "code",
+      "narration": "Then decorate the route. Five requests per minute. Don't forget the request parameter.",
+      "subtitle": "Then decorate the route. Five requests per minute. Don't forget the request parameter.",
+      "visual": "Short code window, decorator highlighted",
+      "on_screen": {
+        "heading": "One *decorator*",
+        "filename": "main.py",
+        "language": "python",
+        "code": "@app.get(\"/hello\")\n@limiter.limit(\"5/minute\")\nasync def hello(request: Request):\n    return {\"msg\": \"ok\"}",
+        "highlight_lines": [2, 3]
+      },
+      "transition": "slide", "sfx": ["whoosh", "pop"], "music_intensity": "low"
+    },
+    {
+      "type": "terminal",
+      "narration": "Request six gets HTTP 429, Too Many Requests.",
+      "subtitle": "Request six gets HTTP 429, Too Many Requests.",
+      "visual": "Terminal, illustrative output",
+      "on_screen": {
+        "heading": "Request #6 → *429*",
+        "illustrative": true,
+        "terminal_lines": ["$ curl -i localhost:8000/hello", "HTTP/1.1 200 OK      (requests 1-5)", "$ curl -i localhost:8000/hello", "HTTP/1.1 429 Too Many Requests"]
+      },
+      "transition": "fade", "sfx": ["typing", "impact"], "music_intensity": "high"
+    },
+    {
+      "type": "bullets",
+      "narration": "Going to production? Use Redis for multiple workers, and make sure you see the real client IP behind a proxy.",
+      "subtitle": "Going to production? Use Redis for multiple workers, and make sure you see the real client IP behind a proxy.",
+      "visual": "Checklist cards",
+      "on_screen": {
+        "heading": "Before *production*",
+        "bullets": ["Shared storage (Redis) for workers", "Real client IP behind a proxy", "Clear 429 message for clients"]
+      },
+      "transition": "wipe", "sfx": ["whoosh", "pop"], "music_intensity": "medium"
+    },
+    {
+      "type": "endcard",
+      "narration": "Save this for your next backend project.",
+      "subtitle": "Save this for your next backend project.",
+      "visual": "End card with follow button",
+      "on_screen": { "heading": "Save this for your *next API*", "cta": "Follow" },
+      "transition": "zoom", "sfx": ["whoosh"], "music_intensity": "medium"
+    }
+  ],
+  "instagram_caption": "DEMO FIXTURE caption: rate limiting FastAPI endpoints with slowapi.",
+  "hashtags": ["#fastapi", "#python", "#ratelimiting"],
+  "cover_text": "Rate limit *FastAPI*",
+  "unverified_claims": []
+}
