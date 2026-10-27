@@ -1,0 +1,108 @@
+{
+  "scene_types": [
+    "hook",
+    "title",
+    "bullets",
+    "code",
+    "terminal",
+    "chat",
+    "diagram",
+    "compare",
+    "stat",
+    "quote",
+    "endcard"
+  ],
+  "transitions": [
+    "fade",
+    "slide",
+    "zoom",
+    "wipe",
+    "clockwipe",
+    "flip",
+    "zoomthrough"
+  ],
+  "sfx": [
+    "whoosh",
+    "click",
+    "pop",
+    "impact",
+    "typing",
+    "glitch",
+    "scanner",
+    "stamp",
+    "chime",
+    "rise"
+  ],
+  "icons": [
+    "user",
+    "laptop",
+    "server",
+    "database",
+    "api",
+    "shield",
+    "lock",
+    "cloud",
+    "bolt",
+    "check",
+    "cross",
+    "clock",
+    "code",
+    "globe",
+    "robot"
+  ],
+  "limits": {
+    "heading": 52,
+    "hook_heading": 60,
+    "subheading": 90,
+    "bullet": 48,
+    "bullets": 5,
+    "code_line": 44,
+    "code_lines": 16,
+    "terminal_line": 46,
+    "terminal_lines": 10,
+    "node_label": 20,
+    "nodes": 4,
+    "compare_point": 34,
+    "compare_points": 3,
+    "subtitle": 140,
+    "messages": 4,
+    "message": 80
+  },
+  "required": {
+    "hook": [
+      "heading"
+    ],
+    "title": [
+      "heading"
+    ],
+    "bullets": [
+      "bullets"
+    ],
+    "code": [
+      "code"
+    ],
+    "terminal": [
+      "terminal_lines"
+    ],
+    "chat": [
+      "messages"
+    ],
+    "diagram": [
+      "nodes"
+    ],
+    "compare": [
+      "left",
+      "right"
+    ],
+    "stat": [
+      "value",
+      "label"
+    ],
+    "quote": [
+      "quote"
+    ],
+    "endcard": [
+      "heading"
+    ]
+  }
+}
