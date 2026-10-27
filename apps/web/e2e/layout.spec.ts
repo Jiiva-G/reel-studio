@@ -34,6 +34,18 @@ test("workspace: no horizontal scroll, no serious accessibility violations", asy
   }
 });
 
+test("no build or deploy configuration is served", async ({ request }) => {
+  // a wrangler auto-migration once wrote dist/wrangler.json (with local paths) into the deployed files
+  // (the local preview server answers unknown paths with the HTML page, so check the content, not only the status)
+  for (const path of ["/wrangler.json", "/wrangler.jsonc", "/wrangler.toml", "/.wrangler/", "/package.json", "/vite.config.ts"]) {
+    const res = await request.get(path);
+    if (res.status() !== 200) continue;
+    const body = await res.text();
+    expect(res.headers()["content-type"] ?? "", path).toContain("text/html");
+    expect(body, path).not.toMatch(/configPath|compatibility_date|devDependencies|defineConfig|Jeeva_Personal/);
+  }
+});
+
 test("keyboard: the website's main action is reachable by tabbing", async ({ page }) => {
   await page.goto("/");
   let found = false;
