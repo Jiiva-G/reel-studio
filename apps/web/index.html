@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reel Studio — notes into 9:16 video</title>
+<meta name="description" content="Reel Studio is a free, open-source studio for 9:16 explainer videos. Write the script and storyboard in your browser, preview it live, and render it on your own machine.">
+<link rel="canonical" href="https://studio.jeevag.in/">
+<meta name="theme-color" content="#06110c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reel Studio — notes into 9:16 video">
+<meta property="og:description" content="A free, open-source studio for 9:16 explainer videos. Write it in your browser, render it on your own machine.">
+<meta property="og:url" content="https://studio.jeevag.in/">
+<meta property="og:image" content="https://studio.jeevag.in/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="/media/frame_01.jpg">
+<script type="module" src="/src/landing/landing.ts"></script>
+</head><body class="no-js">
+
+<header class="hero">
+  <div class="top">
+    <a class="mark" href="/"><i></i>Reel Studio</a>
+    <nav aria-label="Main"><a href="https://github.com/Jiiva-G/reel-studio#readme">Docs</a><a href="https://github.com/Jiiva-G/reel-studio">GitHub</a></nav>
+  </div>
+  <div class="hero-body">
+    <h1 aria-label="Notes into video">
+      <span aria-hidden="true">Notes into</span>
+      <span class="strip" aria-hidden="true"><video src="/media/loop_hook.mp4" poster="/media/frame_01.jpg" muted loop playsinline autoplay></video></span>
+    </h1>
+    <div class="hero-row"><p class="hero-sub">A free, open-source studio for 9:16 explainer videos. Write it in your browser, render it on your own machine.</p>
+    <a class="btn" href="/app/">Open the editor</a></div>
+    <div class="reel-row" aria-label="Scenes from a reel rendered by Reel Studio" role="group" tabindex="0">
+      <img src="/media/frame_01.jpg" alt="Hook scene" width="540" height="960"><img src="/media/frame_03.jpg" alt="Diagram scene" width="540" height="960"><img src="/media/frame_05.jpg" alt="Code scene" width="540" height="960"><img src="/media/frame_07.jpg" alt="Code scene with highlighted lines" width="540" height="960"><img src="/media/frame_08.jpg" alt="Terminal scene" width="540" height="960"><img src="/media/frame_10.jpg" alt="Bullets scene" width="540" height="960"><img src="/media/frame_11.jpg" alt="End card" width="540" height="960">
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="showcase" aria-labelledby="hook-label">
+  <h2 id="hook-label" class="rise">Write a hook. It becomes scene one.</h2>
+  <div class="hook-line" data-ui>
+    <div class="hook-mirror" id="mirror" aria-hidden="true"></div>
+    <input class="hook-input" id="hook" value="Your API is *too slow*" maxlength="90" spellcheck="false" autocomplete="off" aria-labelledby="hook-label" aria-describedby="hook-facts">
+  </div>
+  <div class="answer" data-ui>
+    <div class="scene" aria-hidden="true">
+      <span class="handle">@yourhandle</span>
+      <span class="tag">HOOK</span>
+      <div class="head" id="scene-head"></div>
+      <span class="cap" id="scene-cap"></span>
+    </div>
+    <dl class="facts" id="hook-facts" aria-live="polite">
+      <div><dt>Length</dt><dd id="f-len"></dd></div>
+      <div><dt>Narration, estimated</dt><dd id="f-time"></dd></div>
+      <div><dt>Accent words</dt><dd id="f-accent"></dd></div>
+      <div><dt>Check</dt><dd id="f-check"></dd></div>
+    </dl>
+  </div>
+  <div class="examples"><span>Try</span>
+    <button type="button">One client can *flood* your API</button>
+    <button type="button">Stop *guessing* your SQL plans</button>
+    <button type="button">Your cache is *lying* to you</button>
+  </div>
+</section>
+
+<section class="how" id="how" aria-labelledby="how-h">
+  <h2 id="how-h" class="rise">You write. It renders.</h2>
+  <div class="bar rise" data-ui role="list">
+    <div class="seg write" role="listitem"><b>Your pace</b><small>First, paste notes and write the narration scene by scene.</small></div>
+    <div class="seg board" role="listitem"><b>Minutes</b><small>Then arrange scenes, text and transitions.</small></div>
+    <div class="seg preview" role="listitem"><b>Live</b><small>Watch it play with your brand.</small></div>
+    <div class="seg export" role="listitem"><b>One click</b><small>Export one bundle file.</small></div>
+    <div class="seg render" role="listitem"><b>About 4 min</b><small>Render the MP4, cover and QA report on your machine.</small></div>
+  </div>
+  <div class="clauses rise" aria-hidden="true">
+    <p><b>Content and script</b>First, paste your notes and write the narration scene by scene.</p>
+    <p><b>Storyboard</b>Then arrange scenes, text and transitions.</p>
+    <p><b>Preview</b>Watch it play with your brand.</p>
+    <p><b>Export</b>Save one <code>.reelstudio.zip</code>.</p>
+    <p><b>Render</b>Finally <code>reel-studio import</code> makes the MP4, cover and QA report. Measured for a 39 s reel on a laptop.</p>
+  </div>
+</section>
+
+<section class="proof" aria-labelledby="proof-h">
+  <h2 id="proof-h" class="rise">Every render<span>is checked</span></h2>
+  <div class="side rise">
+    <video src="/media/loop_hook.mp4" poster="/media/frame_01.jpg" muted loop playsinline autoplay width="220" height="391" aria-label="The demo reel, rendered by Reel Studio"></video>
+    <p>The report below is unedited, from rendering the demo reel with no API keys: 39.15 s, 1080×1920.</p>
+  </div>
+  <table class="qa rise">
+    <tbody>
+      <tr><td>Picture</td><td>Resolution 1080×1920</td><td>1080×1920</td><td>Pass</td></tr>
+      <tr><td></td><td>Frame rate</td><td>30.0 fps (expected 30)</td><td>Pass</td></tr>
+      <tr><td></td><td>Duration matches timeline</td><td>39.15 s vs 39.13 s</td><td>Pass</td></tr>
+      <tr><td></td><td>No black gaps (&gt; 0.4 s)</td><td>None</td><td>Pass</td></tr>
+      <tr><td></td><td>End card renders (not blank)</td><td>Luma std 32.6</td><td>Pass</td></tr>
+      <tr class="gap"><td colspan="4"></td></tr>
+      <tr><td>Sound</td><td>No clipping (peak ≤ −0.5 dBFS)</td><td>Peak −1.4 dB, mean −16.9 dB</td><td>Pass</td></tr>
+      <tr><td></td><td>Audio and video in sync</td><td>Difference 0.000 s</td><td>Pass</td></tr>
+      <tr><td></td><td>Narration starts in the hook</td><td>First voice at 0.15 s</td><td>Pass</td></tr>
+      <tr><td></td><td>Narration present</td><td>Silent placeholder voice: the demo has no voice-over</td><td class="warn">Warning</td></tr>
+      <tr class="gap"><td colspan="4"></td></tr>
+      <tr><td>Delivery</td><td>Video codec H.264 yuv420p</td><td>h264 yuv420p</td><td>Pass</td></tr>
+      <tr><td></td><td>Audio codec AAC</td><td>aac</td><td>Pass</td></tr>
+      <tr><td></td><td>Full decode with FFmpeg</td><td>No errors</td><td>Pass</td></tr>
+      <tr><td></td><td>Captions present in every scene</td><td>7 of 7 scenes</td><td>Pass</td></tr>
+      <tr><td></td><td>Pre-render layout limits</td><td>Validated before rendering</td><td>Pass</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="gallery" aria-labelledby="gal-h">
+  <h2 id="gal-h">Eleven<br>scene types</h2>
+  <div class="fan">
+    <button class="print f1" type="button" aria-label="Hook scene"><img src="/media/frame_01.jpg" alt="Hook scene: One client can flood your API" width="540" height="960" loading="lazy"></button>
+    <button class="print f2" type="button" aria-label="Diagram scene"><img src="/media/frame_03.jpg" alt="Diagram scene: client, rate limiter and FastAPI" width="540" height="960" loading="lazy"></button>
+    <button class="print f3" type="button" aria-label="Code scene"><video src="/media/loop_code.mp4" poster="/media/frame_06.jpg" muted loop playsinline autoplay aria-label="Code scene typing a decorator"></video></button>
+    <button class="print f4" type="button" aria-label="Terminal scene"><img src="/media/frame_08.jpg" alt="Terminal scene: request six gets HTTP 429" width="540" height="960" loading="lazy"></button>
+    <button class="print f5" type="button" aria-label="Bullets scene"><img src="/media/frame_10.jpg" alt="Bullets scene: Before production" width="540" height="960" loading="lazy"></button>
+  </div>
+  <p class="note">Hook, title, bullets, code, terminal, chat, diagram, compare, stat, quote and end card. These frames are from the demo render.</p>
+</section>
+
+<section class="features" aria-labelledby="feat-h">
+  <h2 id="feat-h">What you can switch on</h2>
+  <div class="band on"><div><h3>Record the narration yourself.</h3><p class="then">Your WAV is matched to the scenes on your machine: 0 API calls.</p></div><button class="switch" role="switch" aria-checked="true" aria-label="Record the narration yourself"></button></div>
+  <div class="band"><div><h3>Let AI draft the first script.</h3><p class="then">Sends your notes to Gemini with your own key, only after you approve.</p></div><button class="switch" role="switch" aria-checked="false" aria-label="Let AI draft the first script"></button></div>
+  <div class="band"><div><h3>Narrate in Tamil or Tanglish.</h3><p class="then">Sarvam voices with your key, captions in romanized Tanglish.</p></div><button class="switch" role="switch" aria-checked="false" aria-label="Narrate in Tamil or Tanglish"></button></div>
+  <div class="band on"><div><h3>Check every render before posting.</h3><p class="then">15 automatic checks, from resolution to clipping, in one report.</p></div><button class="switch" role="switch" aria-checked="true" aria-label="Check every render before posting"></button></div>
+  <div class="band"><div><h3>Score music to every cut.</h3><p class="then">Effects are timed from the same timeline as the picture.</p></div><button class="switch" role="switch" aria-checked="false" aria-label="Score music to every cut"></button></div>
+</section>
+
+<section class="about" aria-labelledby="about-h">
+  <div class="row">
+    <dl class="rise"><div><dt>Licence</dt><dd>MIT</dd></div><div><dt>Price</dt><dd>Free</dd></div><div><dt>Account</dt><dd>None needed</dd></div></dl>
+    <div class="statement rise"><h2 id="about-h">Reel Studio has no server.</h2> The editor runs in your browser and keeps projects in this browser's storage. The final video is rendered by the open-source engine on your own computer, with your own API keys only if you choose to use any.</div>
+  </div>
+  <div class="row lists">
+    <span class="k">What runs where</span>
+    <div class="cols">
+      <div><h3>In your browser</h3><ul>
+        <li>Script and scene editor <span>v0.1</span></li><li>Storyboard and reordering <span>v0.1</span></li>
+        <li>Live preview <span>v0.1</span></li><li>Brand colours and presets <span>v0.1</span></li><li>Custom fonts <span>Planned</span></li><li>Export bundle <span>v0.1</span></li>
+        <li>Prompt for your own AI assistant <span>v0.1</span></li><li>AI draft with your key <span>Planned</span></li></ul></div>
+      <div><h3>On your machine</h3><ul>
+        <li>Voice-over <span>v0.1</span></li><li>Your own recording <span>v0.1</span></li><li>Sound design <span>v0.1</span></li>
+        <li>MP4 and cover render <span>v0.1</span></li><li>QA report <span>v0.1</span></li><li>Cloud rendering <span>Not offered</span></li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" aria-labelledby="cta-h">
+  <div class="close"><h2 id="cta-h">Start your<br>first reel</h2>
+    <p>Creates the project in this browser and opens the editor. Nothing is uploaded.</p></div>
+  <form class="dialog" data-ui action="/app/" method="get">
+    <h3>New project</h3>
+    <p class="sub">You can change all of this later.</p>
+    <div class="field"><label for="pname">Project name</label><input id="pname" name="name" value="Rate limiting in 40 seconds" maxlength="120"></div>
+    <div class="field"><span class="lbl" id="start-l">Start from</span>
+      <input type="hidden" name="new" value="sample" id="start-kind"><div class="seg-ctl" role="group" aria-labelledby="start-l"><button type="button" aria-pressed="true" data-kind="sample">Sample project</button><button type="button" aria-pressed="false" data-kind="blank">Blank</button></div>
+      <p class="hint" id="start-hint">The sample is a 7-scene reel you can edit.</p></div>
+    <button class="btn go" type="submit">Create project</button>
+  </form>
+</section>
+</main>
+
+<footer aria-labelledby="foot-h">
+  <div class="invite"><h2 id="foot-h">Built in the open</h2><a class="btn quiet" href="https://github.com/Jiiva-G/reel-studio">View on GitHub</a></div>
+  <div class="links"><a href="https://github.com/Jiiva-G/reel-studio#readme">Documentation</a><a href="https://github.com/Jiiva-G/reel-studio/blob/main/docs/bundle-format.md">Bundle format</a><a href="/privacy/">Privacy</a><a href="https://github.com/Jiiva-G/reel-studio/blob/main/LICENSE">Licence</a></div>
+  <div class="legal"><span>MIT licence. Renders with <a href="https://www.remotion.dev/license">Remotion</a>, which has its own licence. <a href="/privacy/">Privacy</a></span><span>© 2026 Jiiva-G</span></div>
+  <div class="word" aria-hidden="true">Reel Studio</div>
+</footer>
+
+</body>
+</html>

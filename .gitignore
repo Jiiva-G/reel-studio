@@ -31,6 +31,8 @@ _tmp/
 *.m4a
 *.aac
 *.raw
+# exception: the website's two silent demo loops, rendered by Reel Studio from examples/demo
+!apps/web/public/media/*.mp4
 
 # generated procedural sound effects (recreated on demand)
 assets/sfx/
@@ -45,6 +47,10 @@ dist/
 .wrangler/
 playwright-report/
 test-results/
+
+# design tooling scratch (screenshots, test renders) and superseded static mockups
+.taste-skill/
+design/
 
 # OS / editor
 .DS_Store

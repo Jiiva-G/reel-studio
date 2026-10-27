@@ -1,0 +1,20 @@
+:root { --ground: #06110c; --field: #171717; --ink: #f2f1ee; --soft: #a9b0ab; --accent: #a31c1b; --accent-ink: #e85450; --margin: clamp(16px, 2.2vw, 32px); }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: var(--ink); font: 400 17px/1.55 "Schibsted Grotesk", system-ui, sans-serif; letter-spacing: -0.01em; }
+a { color: var(--ink); text-underline-offset: 3px; }
+a:hover { color: var(--accent-ink); }
+:focus-visible { outline: 3px solid var(--accent-ink); outline-offset: 3px; border-radius: 4px; }
+code { font-family: ui-monospace, "Cascadia Mono", Menlo, monospace; font-size: .9em; }
+.page-top { display: flex; justify-content: space-between; align-items: center; padding: 22px var(--margin); font-size: 14px; font-weight: 600; }
+.page-top a { text-decoration: none; }
+.mark { display: inline-flex; align-items: center; gap: 10px; }
+.mark i { width: 12px; height: 20px; border-radius: 3px; background: var(--accent); display: block; }
+.page { max-width: 720px; padding: 64px var(--margin) 120px; margin-left: clamp(16px, 14vw, 240px); }
+.page h1 { font-size: clamp(3rem, 1.6rem + 5vw, 5.5rem); font-weight: 800; letter-spacing: -0.05em; line-height: .92; margin: 0 0 24px; }
+.page h2 { font-size: 24px; letter-spacing: -0.02em; margin: 56px 0 12px; }
+.page .lead { font-size: 24px; line-height: 1.35; letter-spacing: -0.02em; }
+.page .meta { color: var(--soft); font-size: 14px; margin-top: 12px; }
+.page ul { padding-left: 20px; display: grid; gap: 10px; }
+.page-foot { background: var(--field); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; padding: 32px var(--margin); color: var(--soft); font-size: 14px; }
+.page-foot a { color: var(--soft); }
+@media (max-width: 760px) { .page { margin-left: 0; padding-top: 32px; } }

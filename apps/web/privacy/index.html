@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — Reel Studio</title>
+<meta name="description" content="How Reel Studio handles your data: no accounts, no analytics, projects stay in your browser.">
+<link rel="canonical" href="https://studio.jeevag.in/privacy/">
+<meta name="theme-color" content="#06110c">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="module" src="/src/landing/page.ts"></script>
+</head>
+<body>
+<header class="page-top"><a class="mark" href="/"><i></i>Reel Studio</a><a href="/app/">Open the editor</a></header>
+<main class="page" id="main">
+  <h1>Privacy</h1>
+  <p class="lead">Reel Studio has no accounts, no analytics and no server of its own. Your work stays on your device.</p>
+  <p class="meta">Last updated 27 October 2026</p>
+
+  <h2>The editor</h2>
+  <ul>
+    <li>Projects, brand presets and settings are saved in your browser's storage (IndexedDB) on this device. They are not sent to us or to anyone else.</li>
+    <li>Clearing this site's data in your browser deletes them. Use <b>Back up all projects</b> or <b>Export</b> to keep a copy.</li>
+    <li>Exported bundles are created in your browser and downloaded straight to your device.</li>
+    <li>The editor makes no calls to AI services. <b>Copy prompt</b> only copies text to your clipboard; if you paste it into an AI assistant, that service's own terms apply.</li>
+    <li>The live preview loads the fonts used in videos (Space Grotesk, Inter, JetBrains Mono, Noto Sans Tamil) from Google Fonts. Google receives your IP address and browser details when they load; see <a href="https://policies.google.com/privacy">Google's privacy policy</a>. This website's own fonts are served from this site.</li>
+  </ul>
+
+  <h2>This website</h2>
+  <ul>
+    <li>No cookies, no analytics and no tracking scripts. We have not enabled Cloudflare Web Analytics or any similar service.</li>
+    <li>The site is hosted on Cloudflare Pages. To deliver and protect it, Cloudflare processes request data such as your IP address and browser details; see <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>.</li>
+  </ul>
+
+  <h2>The local engine</h2>
+  <ul>
+    <li>Rendering happens on your own computer with the open-source <a href="https://github.com/Jiiva-G/reel-studio">reel-studio</a> engine.</li>
+    <li>It sends data to an AI service (Google Gemini, Sarvam AI or Groq) only for a stage you approve with <code>--approve-api</code>, using your own API keys, under that provider's terms. Silent renders and your own recordings need no API.</li>
+  </ul>
+
+  <h2>Questions</h2>
+  <p>Open an issue on <a href="https://github.com/Jiiva-G/reel-studio/issues">GitHub</a>. Reel Studio is open source, so you can also read exactly what it does in the code.</p>
+</main>
+<footer class="page-foot"><span>MIT licence. Renders with <a href="https://www.remotion.dev/license">Remotion</a>, which has its own licence.</span><span>© 2026 Jiiva-G</span></footer>
+</body>
+</html>
