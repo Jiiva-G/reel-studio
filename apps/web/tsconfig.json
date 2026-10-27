@@ -13,7 +13,17 @@
     "noEmit": true,
     "types": ["vite/client", "node"],
     "baseUrl": ".",
-    "paths": { "@renderer/*": ["../../renderer/src/*"] }
+    // Renderer files import react/remotion/three; resolve them from this app so it type-checks without renderer/node_modules.
+    "paths": {
+      "@renderer/*": ["../../renderer/src/*"],
+      "react": ["./node_modules/@types/react"],
+      "react/*": ["./node_modules/@types/react/*"],
+      "remotion": ["./node_modules/remotion"],
+      "@remotion/google-fonts/*": ["./node_modules/@remotion/google-fonts/dist/cjs/*"],
+      "@remotion/*": ["./node_modules/@remotion/*"],
+      "three": ["./node_modules/@types/three"],
+      "@react-three/fiber": ["./node_modules/@react-three/fiber"]
+    }
   },
   "include": ["src", "vite.config.ts", "e2e"]
 }
